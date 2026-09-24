@@ -6,14 +6,8 @@ const  contenerSearch = document.getElementById("contenerSearch")
 const  buttonSearch = document.getElementById("buttonSearch")
 const  inputSearch = document.getElementById("inputSearch")
 
-
-// buttonAuto.addEventListener('click' ,()=> { 
-//     JokesRandom()
-// })
-
-
 async function JokesRandom(){
-    contenerSearch.innerHTML = ''
+    contenerAuto.innerHTML = ''
 
     try{
         const requests = Array.from({ length: 20 }, () =>
@@ -25,11 +19,11 @@ async function JokesRandom(){
         jokes.forEach(joke => {
             const txt = document.createElement('p')
             txt.textContent = joke.value
-            contenerSearch.append(txt)
+            contenerAuto.append(txt)
         })
     }catch(err){
         console.log('Error', err)
-        contenerSearch.innerHTML = '<p>Jokes not found</p>'
+        contenerAuto.innerHTML = '<p>Jokes not found</p>'
     }
 }
 
@@ -63,4 +57,5 @@ async function JokesSearch(){
         contenerSearch.innerHTML = '<p>Jokes not underfinde</p>'
     }
 }
+
 
